@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands">
+  <meta name="keywords" content="Multimodal Alignment, Video Multimodal Large Model, Reinforcement Learning from AI Feedback">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.35.2/gradio.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-full-width">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size:41px">
+            🤖 BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands
+          </h1>
+          <h1 class="title is-4 publication-title" style="color: #FF0066;">
+            Under Review
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://seongwon980.github.io/" target="_new">Seongwon Cho*</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://dcahn12.github.io/" target="_new">Daechul Ahn*</a>,
+            </span>
+            <span>
+              <a href="https://seongwon980.github.io/projects/binder/index.html" target="_new">Donghyun Shin</a>,
+            </span>
+            <span>
+              <a href="https://hyeonbeomchoi.github.io/" target="_new">Hyeonbeom Choi</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://mounkim.github.io" target="_new">San Kim</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ppolon.github.io">Jonghyun Choi</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Seoul National University</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">* equally contributed to this work</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2511.22364"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.22364" target="_new"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://seongwon980.github.io/projects/binder/index.html" target="_new"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+              <!-- Code Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>-->
+              <!-- Dataset Link. -->
+            </div>
+          </div>
+
+          <br>
+          
+          <!-- <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3">Game Play between Ours and Built-in AI (Elite)</h2>
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/AEqLN2pz9ns"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div> -->
+          <!-- <gradio-app src="https://snumpr-vlm-rlaif-demo.hf.space"></gradio-app> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <!-- <p>
+                Recent advancements in large language models have influenced the development of video large multimodal models (VLMMs). 
+                Previous approaches for VLMMs involve Supervised Fine-Tuning (SFT) with instruction-tuned datasets, integrating LLM with visual encoders, and additional learnable parameters. 
+                Here, aligning video with text, and vice versa, remains a challenge, primarily due to the insufficient quality and quantity of multimodal instruction-tune data compared to that of text-only. 
+                This discrepancy often results in alignments that poorly ground the video content. 
+                To address this, we present a novel alignment strategy that employs a multimodal AI system equipped with Reinforcement Learning from AI Feedback (RLAIF), providing self-preference feedback to refine itself and facilitating the alignment of video and text modalities. 
+                Our approach uniquely integrates detailed video descriptions as context into a multimodal AI system during preference feedback generation to enrich the understanding of video content, a process we call context-aware reward modeling. 
+                Empirical evaluations on various video benchmarks demonstrate that our proposed method outperforms existing approaches, including the SFT model.
+            </p> -->
+            <!-- Large Language Models (LLMs) have recently demonstrated impressive action sequence prediction capabilities but often struggle with dynamic, longhorizon tasks such as real-time strategic games. 
+            In a game such as StarCraftII (SC2), agents need to manage resource constraints and adapt to evolving battlefield situations in a partially observable environment. 
+            This often overwhelms exisiting LLM-based approaches. 
+            To address these challenges, we propose a hierarchical multi-agent framework that employs specialized imitation learning agents under a meta-controller called Strategic Planner (SP). 
+            By expert demonstrations, each specialized agent learns a distinctive strategy, such as aerial support or defensive maneuvers, and produces coherent, structured multistep action sequences. 
+            The SP then orchestrates these proposals into a single, environmentally adaptive plan that ensures local decisions aligning with long-term strategies. 
+            We call this HIMA (Hierarchical Imitation Multi-Agent). 
+            We also present TEXTSCII-ALL, a comprehensive SC2 testbed that encompasses all race match combinations in SC2. 
+            Our empirical results show that HIMA outperforms state of the arts in strategic clarity, adaptability, and computational efficiency, underscoring the potential of combining specialized imitation modules with meta-level orchestration to develop more robust, general-purpose AI agents -->
+            Open-vocabulary mobile manipulation (OVMM) requires robots to follow language instructions, navigate, and manipulate while updating their world representation under dynamic environmental changes. 
+            However, most prior approaches update their world representation only at discrete update points such as navigation targets, waypoints, or the end of an action step, leaving robots blind between 
+            updates and causing cascading failures: overlooked objects, late error detection, and delayed replanning. To address this limitation, we propose BINDER (Bridging INstant and DEliberative Reasoning), 
+            a dual process framework that decouples strategic planning from continuous environment monitoring. Specifically, BINDER integrates a Deliberative Response Module (DRM, a multimodal LLM for task planning) 
+            with an Instant Response Module (IRM, a VideoLLM for continuous monitoring). The two modules play complementary roles: the DRM performs strategic planning with structured 3D scene updates and guides 
+            what the IRM attends to, while the IRM analyzes video streams to update memory, correct ongoing actions, and trigger replanning when necessary. Through this bidirectional coordination, 
+            the modules address the trade off between maintaining awareness and avoiding costly updates, enabling robust adaptation under dynamic conditions. 
+            Evaluated in three real world environments with dynamic object placement, BINDER achieves substantially higher success and efficiency than SoTA baselines, demonstrating its effectiveness for real world deployment.
+            <p></p>
+            <!-- <div class="columns is-centered has-text-centered">
+              <div class="column is-fullwidth">
+                <img src='static/figures/radar.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:60%">
+                <h5>Quantitative comparison of VLMs on various video benchmarks</h5>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/4vIrqhuU5XE?si=zG8nzhUl78FZEY-Q"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <div class="columns is-centered has-text-centered">
+            <div class="column is-fullwidth">
+              <img src='static/figures/binder_overview.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%" loop="infinite">
+              <h5>Illustration of the proposed <b>BINDER</b> framework</h5>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{choASCKC25,
+  author    = {Seongwon Cho, Daechul Ahn, Donghyun Shin, Hyeonbeom Choi, San Kim, Jonghyun Choi},
+  title     = {BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands},
+  journal   = {arXiv preprint arXiv:2511.22364},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          The website template is from <a href="https://github.com/nerfies/nerfies.github.io">here</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
