@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands">
+  <meta name="keywords" content="Mobile Manipulation, Open-Vocabulary, Robotics, Video-LLM, Dual-Process Framework">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.35.2/gradio.js"></script>
+  <style>
+    /* Available button styles */
+    .available-btn {
+      transition: all 0.2s ease;
+    }
+    .available-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .available-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Coming soon button styles */
+    .coming-soon-btn {
+      cursor: not-allowed !important;
+      opacity: 0.6;
+      transition: all 0.2s ease;
+      pointer-events: auto !important;
+    }
+    .coming-soon-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+    .coming-soon-btn:active {
+      transform: scale(0.98);
+    }
+
+    .link-block {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-full-width">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size:41px">
+            🤖 BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands
+          </h1>
+          <h1 class="title is-4 publication-title" style="color: #FF0066;">
+            ICRA 2026
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://seongwon980.github.io/" target="_new">Seongwon Cho*</a>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://dcahn12.github.io/" target="_new">Daechul Ahn*</a>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="" target="">Donghyun Shin</a>,&nbsp;
+            </span>
+
+            <br>
+
+            <span class="author-block">
+              <a href="https://hyeonbeomchoi.github.io/" target="_new">Hyeonbeom Choi</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://mounkim.github.io" target="_new">San Kim</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ppolon.github.io" target="_new">Jonghyun Choi</a>
+            </span>     
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Seoul National University</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">* equally contributed to this work</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- arXiv Link (available) -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2512.08979" target="_new"
+                   class="external-link button is-normal is-rounded is-dark available-btn">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a  href="" target="_new"
+                    class="external-link button is-normal is-rounded is-dark available-btn">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+
+              <!-- <br> -->
+
+              <!-- Coming Soon Links -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-light coming-soon-btn"
+                   onclick="alert('Paper will be available soon!')" title="Coming soon">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">Abstract</h2>
+          <div style="background: #f8f9fa; border-left: 3px solid #5a7a94; border-radius: 0 8px 8px 0; padding: 25px 30px;">
+            <div class="content has-text-justified" style="font-size: 1.05em; line-height: 1.7; margin: 0;">
+              Current open-vocabulary mobile manipulation (OVMM) systems update their world representation only at <b>discrete points</b>, leaving robots blind to environmental changes between updates. We propose <span style="background: #5a7a94; color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600;">BINDER</span>, a dual-process framework that combines a <b>Deliberative Response Module</b> (DRM) for strategic planning with an <b>Instant Response Module</b> (IRM) for continuous video-stream monitoring. This enables robots to detect changes immediately and trigger on-demand replanning, achieving substantially higher success rates in dynamic real-world environments.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [HERE] gif figure insert!!! -->
+
+      <!-- <div class="columns is-centered has-text-centered">
+            <div class="column is-fullwidth">
+              <img src='static/figures/HIMA.gif' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:80%" loop="infinite">
+              <h5>Motivation of the proposed <b>V</b>isual <b>E</b>vent <b>C</b>hronology and <b>T</b>emporal <b>O</b>rder <b>R</b>easoning (<b>VECTOR</b>) Benchamark</h5>
+            </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <!-- MOTIVATION Section -->
+    <div style="margin-bottom: 25px;">
+      <span style="background: #5a7a94; color: white; padding: 6px 16px; border-radius: 4px; font-size: 0.85em; font-weight: 600; letter-spacing: 0.5px;">MOTIVATION</span>
+      <h1 class="title is-3" style="margin-top: 12px; margin-bottom: 8px;">
+        The Temporal Blindness Problem
+      </h1>
+      <p style="color: #666; font-size: 1.05em; margin: 0;">Why do current OVMM systems fail in dynamic environments?</p>
+    </div>
+    <div class="content has-text-justified">
+
+      <!-- Key Question Box -->
+      <div style="background: #5a7a94; color: white; padding: 18px 25px; border-radius: 6px; margin-bottom: 25px;">
+        <p style="font-size: 1.1em; margin: 0; font-weight: 500;">
+          Current OVMM systems rely on <b>3D semantic scene reconstruction</b> to maintain their world representation. However, this process is computationally expensive (10-30 seconds per update), forcing robots to update only at discrete points. <em>Between these updates, robots are effectively blind to any environmental changes.</em>
+        </p>
+      </div>
+
+      <!-- Figure with Explanation -->
+      <div class="has-text-centered" style="margin-bottom: 25px;">
+        <img src='static/figures/binder_motivation.png' style="max-width: 60%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.9em; color: #666; margin-top: 12px; font-style: italic;">A robot tasked with finding and grasping a banana while navigating from p₀ to p₁</p>
+      </div>
+
+      <!-- Three Approaches Comparison -->
+      <div class="columns">
+        <div class="column is-4">
+          <div style="background: #f8f9fa; border-radius: 6px; padding: 18px; height: 100%;">
+            <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">(a) Sparse Updates</h4>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 8px;"><em>e.g., OK-Robot, DovSG</em></p>
+            <p style="font-size: 0.9em; margin: 0;">Refresh perception only upon arriving at navigation targets. If the banana appears along the path between p₀ and p₁, the robot <b>completely misses it</b> because it never "looks" during traversal.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div style="background: #f8f9fa; border-radius: 6px; padding: 18px; height: 100%;">
+            <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">(b) Frequent Updates</h4>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 8px;"><em>e.g., DynaMem</em></p>
+            <p style="font-size: 0.9em; margin: 0;">Insert intermediate waypoints for 3D reconstruction. This <b>slows execution</b> with repeated pauses and still leaves <b>blind spots</b> between checkpoints where objects can be missed.</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div style="background: #e8f5e9; border-radius: 6px; padding: 18px; height: 100%; border: 2px solid #5a7a94;">
+            <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">(c) BINDER (Ours)</h4>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 8px;"><em>Continuous + On-demand</em></p>
+            <p style="font-size: 0.9em; margin: 0;">Maintain <b>continuous visual awareness</b> via lightweight video-stream monitoring while in motion. Trigger <b>on-demand</b> 3D updates only when significant changes are detected.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Insight -->
+      <div style="background: #e57373; color: white; padding: 18px 25px; border-radius: 6px; margin-top: 25px;">
+        <p style="font-size: 1.02em; margin: 0;">
+          <b style="color: #333;">Key Insight:</b> Not all perception tasks demand the same computational cost. Detecting environmental changes can be handled through lightweight video analysis, while precise 3D geometry is only needed at critical decision points. By separating the two, BINDER resolves the trade-off between continuous awareness and costly updates.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <!-- METHOD Section -->
+    <div style="margin-bottom: 25px;">
+      <span style="background: #5a7a94; color: white; padding: 6px 16px; border-radius: 4px; font-size: 0.85em; font-weight: 600; letter-spacing: 0.5px;">METHOD</span>
+      <h1 class="title is-3" style="margin-top: 12px; margin-bottom: 8px;">
+        Dual-Process Reasoning in BINDER
+      </h1>
+      <p style="color: #666; font-size: 1.05em; margin: 0;">Two modules coordinating bidirectionally throughout task execution</p>
+    </div>
+    <div class="content has-text-justified">
+
+      <!-- Core Concept -->
+      <div style="background: #5a7a94; color: white; padding: 18px 25px; border-radius: 6px; margin-bottom: 25px;">
+        <p style="font-size: 1.1em; margin: 0; font-weight: 500;">
+          <b>DRM</b> (Deliberative Response Module) handles strategic planning and tells IRM <em>what to monitor</em>, while <b>IRM</b> (Instant Response Module) provides continuous video-stream monitoring and reports <em>significant events</em> back to DRM. This bidirectional coordination enables continuous awareness via lightweight monitoring, with expensive 3D reconstruction triggered only when needed.
+        </p>
+      </div>
+
+      <!-- Overview Figure -->
+      <div class="has-text-centered" style="margin-bottom: 25px;">
+        <img src='static/figures/binder_overview.png' style="max-width: 85%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.9em; color: #666; margin-top: 12px; font-style: italic;">Task: "Place the black toy on the bookshelf and the banana on the yellow plate"</p>
+      </div>
+
+      <!-- Two Modules -->
+      <div class="columns" style="margin-bottom: 25px;">
+        <div class="column is-6">
+          <div style="background: #f8f9fa; border-left: 3px solid #5a7a94; border-radius: 0 6px 6px 0; padding: 18px; height: 100%;">
+            <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">DRM (Strategic Planner)</h4>
+            <p style="font-size: 0.95em; margin: 0;">Multimodal LLM that decides high-level actions (explore, goto, grasp) and generates <b>guidance prompts</b> telling IRM what to monitor for each phase.</p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div style="background: #f8f9fa; border-left: 3px solid #5a7a94; border-radius: 0 6px 6px 0; padding: 18px; height: 100%;">
+            <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">IRM (Continuous Monitor)</h4>
+            <p style="font-size: 0.95em; margin: 0;">Video-LLM that processes camera streams (1-second clips) and produces <b>structured reports</b> determining execution mode based on DRM's guidance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Execution Flow with Flowchart -->
+      <div class="columns" style="margin-bottom: 25px;">
+        <!-- Left: Flowchart Figure -->
+        <div class="column is-5" style="display: flex; align-items: center; justify-content: center;">
+          <div class="has-text-centered">
+            <img src='static/figures/binder_flowchart.png' style="max-width: 80%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <p style="font-size: 0.85em; color: #666; margin-top: 10px; font-style: italic;">Execution loop (a) and shared memory (b)</p>
+          </div>
+        </div>
+        <!-- Right: Execution Loop + Memory -->
+        <div class="column is-7">
+          <!-- Execution Loop -->
+          <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">Execution Loop</h4>
+          <p style="font-size: 0.9em; margin-bottom: 12px;">
+            The outer loop iterates until task completion. At each step, DRM decides the next action and guidance prompt. While the robot executes, IRM monitors continuously and determines one of three execution modes:
+          </p>
+          <div style="display: flex; gap: 8px; margin-bottom: 18px;">
+            <div style="flex: 1; background: #f8f9fa; border-radius: 6px; padding: 10px; text-align: center;">
+              <b style="color: #4caf50;">CONTINUE</b>
+              <p style="font-size: 0.8em; margin: 5px 0 0 0;">Nothing detected → keep going</p>
+            </div>
+            <div style="flex: 1; background: #f8f9fa; border-radius: 6px; padding: 10px; text-align: center;">
+              <b style="color: #ff9800;">ADJUST</b>
+              <p style="font-size: 0.8em; margin: 5px 0 0 0;">Local correction without stopping</p>
+            </div>
+            <div style="flex: 1; background: #f8f9fa; border-radius: 6px; padding: 10px; text-align: center;">
+              <b style="color: #f44336;">REPLAN</b>
+              <p style="font-size: 0.8em; margin: 5px 0 0 0;">Stop, 3D update, new plan</p>
+            </div>
+          </div>
+
+          <!-- Shared Memory -->
+          <h4 style="color: #5a7a94; margin-bottom: 10px; font-weight: 600;">Shared Memory</h4>
+          <div style="background: #f8f9fa; border-radius: 6px; padding: 12px; font-size: 0.9em;">
+            <p style="margin: 0 0 6px 0;"><b>3D Voxel Map</b> — Semantic scene, updated at nav targets or REPLAN</p>
+            <p style="margin: 0 0 6px 0;"><b>2D Occupancy Map</b> — Top-down projection for path planning</p>
+            <p style="margin: 0 0 6px 0;"><b>Action History</b> — Log of executed actions for context</p>
+            <p style="margin: 0;"><b>Object Registry</b> — Discovered objects with 3D positions, populated by both modules</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase-Specific Behavior -->
+      <h4 style="color: #5a7a94; margin-bottom: 12px; font-weight: 600;">Phase-Specific Behavior</h4>
+      <p style="font-size: 0.95em; margin-bottom: 15px;">
+        The guidance prompt from DRM configures IRM's monitoring focus and response criteria for each task phase:
+      </p>
+      <div class="columns">
+        <div class="column is-6">
+          <div style="background: #f8f9fa; border-left: 3px solid #4caf50; border-radius: 0 6px 6px 0; padding: 18px; height: 100%;">
+            <h5 style="color: #5a7a94; margin-bottom: 8px; font-weight: 600;">During Navigation</h5>
+            <p style="font-size: 0.9em; margin: 0;">
+              IRM monitors for <b>task-relevant objects</b> appearing in the scene. If a target object is spotted mid-path → <b style="color: #f44336;">REPLAN</b> triggers immediate 3D update and plan revision to grasp the object.
+            </p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div style="background: #f8f9fa; border-left: 3px solid #ff9800; border-radius: 0 6px 6px 0; padding: 18px; height: 100%;">
+            <h5 style="color: #5a7a94; margin-bottom: 8px; font-weight: 600;">During Manipulation</h5>
+            <p style="font-size: 0.9em; margin: 0;">
+              IRM monitors <b>grasp feasibility and execution quality</b>. Pose misalignment → <b style="color: #ff9800;">ADJUST</b> regenerates candidates locally. Critical failures (repeated fails, unavailable receptacle) → <b style="color: #f44336;">REPLAN</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <!-- RESULTS Section -->
+    <div style="margin-bottom: 25px;">
+      <span style="background: #5a7a94; color: white; padding: 6px 16px; border-radius: 4px; font-size: 0.85em; font-weight: 600; letter-spacing: 0.5px;">RESULTS</span>
+      <h1 class="title is-3" style="margin-top: 12px; margin-bottom: 8px;">
+        Office Environment Evaluation
+      </h1>
+      <!-- <p style="color: #666; font-size: 1.05em; margin: 0;">40 trials per task with dynamic perturbations applied during execution</p> -->
+      <p style="color: #666; font-size: 1.05em; margin: 0;">For more details, please check out the <a href="https://www.arxiv.org/pdf/2511.22364" target="_new" style="color: #5a7a94; font-weight: 600;">paper</a>.</p>
+    </div>
+    <div class="content has-text-justified">
+
+      <!-- Result Figure -->
+      <div class="has-text-centered" style="margin-bottom: 25px;">
+        <img src='static/figures/binder_result.png' style="max-width: 75%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.85em; color: #666; margin-top: 10px; font-style: italic;">Task complexity scales from 1 to 3 pick-and-place subtasks. 40 trials per task with dynamic perturbations applied during execution.</p>
+      </div>
+
+      <!-- Key Results -->
+      <div style="background: #5a7a94; color: white; padding: 18px 25px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="font-size: 1.05em; margin: 0; font-weight: 500;">
+          BINDER achieves <b>93%</b> success rate on single-subtask and <b>63%</b> on three-subtask scenarios, compared to the strongest baseline DynaMem's <b>60%</b> and <b>15%</b> respectively. The gap widens with task complexity as baseline methods suffer from compounding failures.
+        </p>
+      </div>
+
+      <!-- Metrics explanation -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 15px; font-size: 0.9em;">
+        <b>SR</b> (Success Rate) — Full task completion &nbsp;|&nbsp;
+        <b>PSR</b> (Partial SR) — Fraction of subtasks completed &nbsp;|&nbsp;
+        <b>SPL</b> — Success weighted by path efficiency &nbsp;|&nbsp;
+        <b>PSPL</b> — Partial success weighted by path efficiency
+      </div>
+
+      <!-- <p style="font-size: 0.95em; margin-top: 15px;">
+        Even when not fully completing all subtasks, BINDER achieves <b>0.85 PSR</b> in Task 3 (vs. DynaMem's 0.62), demonstrating substantial partial progress. The SPL/PSPL metrics confirm BINDER's higher success does not come at the cost of efficiency—it is both more reliable and path-efficient.
+      </p> -->
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{choASCKC26,
+  author    = {Cho, Seongwon and Ahn, Daechul and Shin, Donghyun and Choi, Hyeonbeom and Kim, San and Choi, Jonghyun},
+  title     = {BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands},
+  booktitle = {ICRA},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          The website template is from <a href="https://github.com/nerfies/nerfies.github.io">here</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
